@@ -15,6 +15,7 @@ spec:
       containers:
         - name: spark-ui-proxy
           image: elsonrodriguez/spark-ui-proxy:1.0
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
           resources:
