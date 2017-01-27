@@ -2,6 +2,7 @@ kind: ReplicationController
 apiVersion: v1
 metadata:
   name: spark-worker-controller
+  namespace: spark-cluster
 spec:
   replicas: 2
   selector:
@@ -13,8 +14,7 @@ spec:
     spec:
       containers:
         - name: spark-worker
-          image: gcr.io/google_containers/spark:1.5.2_v1
-          command: ["/start-worker"]
+          image: srfrnk/spark-worker
           ports:
             - containerPort: 8081
           resources:
